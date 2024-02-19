@@ -32,4 +32,5 @@ class Array {
 const newArray = new Array();
 newArray.push("sgar");
 newArray.push("reddy");
+console.log(newArray.get(1));
 console.log(newArray);
