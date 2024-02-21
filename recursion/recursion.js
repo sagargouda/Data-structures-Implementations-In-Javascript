@@ -1,60 +1,44 @@
-//!! Linear traversal of array
-
-// function printArray(a, size) {
-//   if (size == 0) {
-//     return;
+// function recursive(i) {
+//   if (i === 5) {
+//     return false;
 //   }
-//   console.log(a);
-//   printArray(a + 1, size - 1);
+
+//   console.log("called");
+//   return recursive(i + 1);
+// }
+// let i = 0;
+// recursive(i);
+
+//!! multiplication in an array
+
+// function multiply(arr) {
+//   // base condiiton
+//   if (arr.length <= 0) {
+//     return 1;
+//   }
+//   return arr[arr.length - 1] * multiply(arr.slice(0, arr.length - 1));
 // }
 
-// printArray(6, 6);
+// console.log(multiply([1, 2, 3, 4, 5]));
 
-//!! factorial
+//!! factorial question
+///? n = 5 => 5 * 4 * 3*2 * 1
 
-// function factorial(n) {
+// function fact(n) {
 //   if (n === 1) {
 //     return 1;
 //   }
-//   return n * factorial(n - 1)
+//   return n * fact(n - 1);
 // }
 
-// const ans = factorial(6);
-// console.log(ans);
+// console.log(fact(5));
 
-//!! fibonacci
-// function fibonacci(n) {
-//   if (n <= 1) {
-//     return n;
-//   }
-//   return fibonacci(n - 1) + fibonacci(n - 2);
-// }
-// const ans = fibonacci(5);
-// console.log(ans);
-
-//!! maximum in array
-
-// function findMax(arr, size) {
-//   if (size === 1) {
-//     return arr[0];
-//   }
-//   return Math.max(arr[size], findMax(arr, size - 1));
-// }
-
-// let arr = [1, 4, 45, 6, -50, 10, 2];
-// let size = arr.length - 1;
-
-// const ansd = findMax(arr, size);
-// console.log(ansd);
-
-//!! climb stair
-
-function climbStairs(n) {
-  // base class
-  if (n === 0 || n === 1) {
-    return 1;
+//!! range of number
+function range(startNum, endNum) {
+  if (startNum > endNum) {
+    return [];
   }
-  return climbStairs(n - 1) + climbStairs(n - 2);
+  return [startNum].concat(range(startNum + 1, endNum));
 }
-const ans = climbStairs(3);
-console.log(ans);
+
+console.log(range(0, 5));
